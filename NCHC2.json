@@ -5201,7 +5201,8 @@
       "submitter_id",
       "type",
       "data_type",
-      "data_format"
+      "data_format",
+      "data_category"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/data_file_properties",
@@ -5269,6 +5270,21 @@
           "txt",
           "VCF",
           "xlsx"
+        ]
+      },
+      "data_category": {
+        "term": {
+          "$ref": "_terms.yaml#/data_category"
+        },
+        "enum": [
+          "Analysis",
+          "Sequencing Reads",
+          "Single Nucleotide Variation",
+          "Simple Nucleotide Variation",
+          "Transcriptome Profiling",
+          "Clinical",
+          "Imaging",
+          "Supplemental"
         ]
       },
       "sample2s": {
