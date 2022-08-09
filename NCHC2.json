@@ -5199,7 +5199,9 @@
       "sample_id",
       "sequencing_id",
       "submitter_id",
-      "type"
+      "type",
+      "data_type",
+      "data_format"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/data_file_properties",
@@ -5218,6 +5220,56 @@
       "number_update": {
         "description": "test\n",
         "type": "number"
+      },
+      "data_type": {
+        "term": {
+          "$ref": "_terms.yaml#/data_type"
+        },
+        "enum": [
+          "Aligned Reads",
+          "Analysis Supplement",
+          "Unaligned Reads",
+          "Annotated Mutation",
+          "Allele Specific Expression",
+          "Junction Files",
+          "Haplotype Phasing",
+          "Histology",
+          "Clinical Supplement",
+          "Transcriptome Expression",
+          "Variants Annotation"
+        ]
+      },
+      "data_format": {
+        "term": {
+          "$ref": "_terms.yaml#/data_format"
+        },
+        "enum": [
+          "bai",
+          "bam",
+          "bcf",
+          "bed",
+          "bigWig",
+          "bim",
+          "crai",
+          "cram",
+          "csv",
+          "docx",
+          "fam",
+          "fastq",
+          "gds",
+          "idat",
+          "jpg",
+          "junc",
+          "pdf",
+          "readme",
+          "svs",
+          "tab",
+          "tbi",
+          "tsv",
+          "txt",
+          "VCF",
+          "xlsx"
+        ]
       },
       "sample2s": {
         "$ref": "_definitions.yaml#/to_many"
