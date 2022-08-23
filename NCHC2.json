@@ -14,6 +14,14 @@
     "systemProperties": [
       "id"
     ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "name"
+      ]
+    ],
     "required": [
       "dbgap_accession_number",
       "name"
@@ -81,6 +89,15 @@
           }
         ]
       }
+    ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "project_id",
+        "submitter_id"
+      ]
     ],
     "required": [
       "data_category",
@@ -462,14 +479,6 @@
     "additionalProperties": false,
     "submittable": true,
     "validators": null,
-    "uniqueKeys": [
-      [
-        "id"
-      ],
-      [
-        "code"
-      ]
-    ],
     "links": [
       {
         "name": "programs",
@@ -486,6 +495,14 @@
       "released",
       "releasable",
       "intended_release_date"
+    ],
+    "uniqueKeys": [
+      [
+        "code"
+      ],
+      [
+        "id"
+      ]
     ],
     "required": [
       "code",
@@ -662,24 +679,14 @@
       ]
     ],
     "required": [
-      "measurement_id",
       "measurements",
       "primary_site",
-      "sample_id",
       "sample_type",
       "submitter_id",
       "type"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/ubiquitous_properties",
-      "sample_id": {
-        "description": "test\n",
-        "type": "string"
-      },
-      "measurement_id": {
-        "description": "test\n",
-        "type": "string"
-      },
       "sample_type": {
         "description": "test\n",
         "enum": [
@@ -738,7 +745,6 @@
     "required": [
       "create_datetime",
       "effective_datetime",
-      "id",
       "measurement_code",
       "measurement_name",
       "measurement_value",
@@ -748,14 +754,6 @@
     ],
     "properties": {
       "$ref": "_definitions.yaml#/ubiquitous_properties",
-      "id": {
-        "description": "test\n",
-        "type": "string"
-      },
-      "visit_occurrence_id": {
-        "description": "test\n",
-        "type": "integer"
-      },
       "measurement_name": {
         "description": "test\n",
         "type": "string"
@@ -814,6 +812,15 @@
         "multiplicity": "many_to_many",
         "required": true
       }
+    ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "project_id",
+        "submitter_id"
+      ]
     ],
     "required": [
       "subjects",
@@ -948,22 +955,12 @@
       "create_datetime",
       "gender",
       "institution",
-      "person_id",
-      "project_id",
       "projects",
       "submitter_id",
       "type"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/ubiquitous_properties",
-      "project_id": {
-        "description": "Gen3 project ID\n",
-        "type": "string"
-      },
-      "person_id": {
-        "description": "test\n",
-        "type": "string"
-      },
       "birth_date": {
         "description": "test\n",
         "type": "string"
@@ -2844,6 +2841,15 @@
         "required": true
       }
     ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "project_id",
+        "submitter_id"
+      ]
+    ],
     "required": [
       "samples",
       "submitter_id",
@@ -2998,23 +3004,13 @@
     "required": [
       "date",
       "division",
-      "id",
       "patients",
-      "person_id",
       "source",
       "submitter_id",
       "type"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/ubiquitous_properties",
-      "id": {
-        "description": "test\n",
-        "type": "integer"
-      },
-      "person_id": {
-        "description": "test\n",
-        "type": "string"
-      },
       "source": {
         "description": "test\n",
         "enum": [
@@ -3078,6 +3074,15 @@
         "multiplicity": "many_to_one",
         "required": true
       }
+    ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "project_id",
+        "submitter_id"
+      ]
     ],
     "required": [
       "subjects",
@@ -3442,6 +3447,15 @@
         "multiplicity": "many_to_one",
         "required": true
       }
+    ],
+    "uniqueKeys": [
+      [
+        "id"
+      ],
+      [
+        "project_id",
+        "submitter_id"
+      ]
     ],
     "required": [
       "projects",
@@ -5204,24 +5218,11 @@
       "experimentalstrategy",
       "number_update",
       "sample2s",
-      "sample_id",
-      "sequencing_id",
       "submitter_id",
-      "type",
-      "data_type",
-      "data_format",
-      "data_category"
+      "type"
     ],
     "properties": {
       "$ref": "_definitions.yaml#/data_file_properties",
-      "sequencing_id": {
-        "description": "test\n",
-        "type": "string"
-      },
-      "sample_id": {
-        "description": "test\n",
-        "type": "string"
-      },
       "experimentalstrategy": {
         "description": "test\n",
         "type": "string"
@@ -5229,71 +5230,6 @@
       "number_update": {
         "description": "test\n",
         "type": "number"
-      },
-      "data_type": {
-        "term": {
-          "$ref": "_terms.yaml#/data_type"
-        },
-        "enum": [
-          "Aligned Reads",
-          "Analysis Supplement",
-          "Unaligned Reads",
-          "Annotated Mutation",
-          "Allele Specific Expression",
-          "Junction Files",
-          "Haplotype Phasing",
-          "Histology",
-          "Clinical Supplement",
-          "Transcriptome Expression",
-          "Variants Annotation"
-        ]
-      },
-      "data_format": {
-        "term": {
-          "$ref": "_terms.yaml#/data_format"
-        },
-        "enum": [
-          "bai",
-          "bam",
-          "bcf",
-          "bed",
-          "bigWig",
-          "bim",
-          "crai",
-          "cram",
-          "csv",
-          "docx",
-          "fam",
-          "fastq",
-          "gds",
-          "idat",
-          "jpg",
-          "junc",
-          "pdf",
-          "readme",
-          "svs",
-          "tab",
-          "tbi",
-          "tsv",
-          "txt",
-          "VCF",
-          "xlsx"
-        ]
-      },
-      "data_category": {
-        "term": {
-          "$ref": "_terms.yaml#/data_category"
-        },
-        "enum": [
-          "Analysis",
-          "Sequencing Reads",
-          "Single Nucleotide Variation",
-          "Simple Nucleotide Variation",
-          "Transcriptome Profiling",
-          "Clinical",
-          "Imaging",
-          "Supplemental"
-        ]
       },
       "sample2s": {
         "$ref": "_definitions.yaml#/to_many"
