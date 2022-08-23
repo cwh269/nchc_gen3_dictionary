@@ -5215,6 +5215,9 @@
       ]
     ],
     "required": [
+      "data_category",
+      "data_format",
+      "data_type",
       "experimentalstrategy",
       "number_update",
       "sample2s",
@@ -5230,6 +5233,18 @@
       "number_update": {
         "description": "test\n",
         "type": "number"
+      },
+      "data_type": {
+        "description": "test\n",
+        "type": "string"
+      },
+      "data_format": {
+        "description": "test\n",
+        "type": "string"
+      },
+      "data_category": {
+        "description": "test\n",
+        "type": "string"
       },
       "sample2s": {
         "$ref": "_definitions.yaml#/to_many"
