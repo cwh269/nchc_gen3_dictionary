@@ -662,7 +662,7 @@
     "links": [
       {
         "name": "measurements",
-        "backref": "sequencings",
+        "backref": "sample2s",
         "label": "collected in",
         "target_type": "measurement",
         "multiplicity": "many_to_one",
@@ -726,7 +726,7 @@
     "links": [
       {
         "name": "visit_occurences",
-        "backref": "sample2s",
+        "backref": "measurements",
         "label": "measured at",
         "target_type": "visit_occurence",
         "multiplicity": "many_to_one",
