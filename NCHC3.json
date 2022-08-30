@@ -933,7 +933,7 @@
     "links": [
       {
         "name": "projects",
-        "backref": "visit_occurences",
+        "backref": "patients",
         "label": "from",
         "target_type": "project",
         "multiplicity": "many_to_one",
